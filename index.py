@@ -1,12 +1,25 @@
 import numpy as np
+import random as rd
+
+bateaux4_1 = {"longueur":4,"largeur":1, "sens":rd.randrange(0,2)}
+bateaux3_1_1 = {"longueur":3,"largeur":1, "sens":rd.randrange(0,2)}
+bateaux3_1_2 = {"longueur":3,"largeur":1, "sens":rd.randrange(0,2)}
+bateaux2_1_1 = {"longueur":2,"largeur":1, "sens":rd.randrange(0,2)}
+bateaux2_1_2 = {"longueur":2,"largeur":1, "sens":rd.randrange(0,2)}
+
 grille=np.arange(16*16).reshape(16,16)
-for i in range(16):
-    for j in range (16):
-        grille[i][j]=0
+for ligne in range(16):
+    for cologne in range (16):
+        grille[ligne][cologne]=0
+
+def bateauxPosition(bateaux):
+    # A finir
 
 
 
-# Etape 1 : Généré une matrice rempli de 0
+
+
+# Etape 1 : Généré une matrice rempli de 0 /
 # Etape 2 : Généré les Différents Bateaux qui sont des liste qui contienne plusieur donnée comme leur sens, leur taille ect..
 # Etape 3 : Vérifier si le bateau est vertical ou horizontal en créant une fonction is_vert
 # Etape 4 : Générer les coordonnés au hasard pour les bateaux.
