@@ -1,11 +1,11 @@
 import numpy as np
 import random as rd
 
-bateaux4_1 = {"longueur":4,"largeur":1, "sens":rd.randrange(0,2)}
-bateaux3_1_1 = {"longueur":3,"largeur":1, "sens":rd.randrange(0,2)}
-bateaux3_1_2 = {"longueur":3,"largeur":1, "sens":rd.randrange(0,2)}
-bateaux2_1_1 = {"longueur":2,"largeur":1, "sens":rd.randrange(0,2)}
-bateaux2_1_2 = {"longueur":2,"largeur":1, "sens":rd.randrange(0,2)}
+bateaux4_1 = {"longueur":4,"sens":rd.randrange(0,2)}
+bateaux3_1_1 = {"longueur":3,"sens":rd.randrange(0,2)}
+bateaux3_1_2 = {"longueur":3,"sens":rd.randrange(0,2)}
+bateaux2_1_1 = {"longueur":2,"sens":rd.randrange(0,2)}
+bateaux2_1_2 = {"longueur":2,"sens":rd.randrange(0,2)}
 
 grille_player=np.arange(16*16).reshape(16,16)
 grille_bot=np.arange(16*16).reshape(16,16)
@@ -15,9 +15,12 @@ for ligne in range(16):
         grille_bot[ligne][cologne]=0
         grille_player[ligne][cologne]=0
 
-def bateauxPosition(bateaux):
-    # A finir
+def bateauxPositionbot(bateaux):
+    if sens==0:
 
+    if sens==1:
+        
+    
 
 
 
