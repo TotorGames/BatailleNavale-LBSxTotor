@@ -1,11 +1,11 @@
 import numpy as np
 import random as rd
 
-bateaux4_1 = {"longueur":4,"sens":rd.randrange(0,2)}
-bateaux3_1_1 = {"longueur":3,"sens":rd.randrange(0,2)}
-bateaux3_1_2 = {"longueur":3,"sens":rd.randrange(0,2)}
-bateaux2_1_1 = {"longueur":2,"sens":rd.randrange(0,2)}
-bateaux2_1_2 = {"longueur":2,"sens":rd.randrange(0,2)}
+bateaux4_1 = {'longueur':4,'sens':rd.randrange(0,2)}
+bateaux3_1_1 = {'longueur':3,'sens':rd.randrange(0,2)}
+bateaux3_1_2 = {'longueur':3,'sens':rd.randrange(0,2)}
+bateaux2_1_1 = {'longueur':2,'sens':rd.randrange(0,2)}
+bateaux2_1_2 = {'longueur':2,'sens':rd.randrange(0,2)}
 
 grille_player=np.arange(16*16).reshape(16,16)
 grille_bot=np.arange(16*16).reshape(16,16)
@@ -17,26 +17,25 @@ for ligne in range(16):
 
 def bateauxPositionbot(bateaux,grille):
     bateaux.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
-    if bateaux[sens]==0:
-        long = bateaux[longueur]
-        y = bateaux.y
+    if bateaux['sens']==0:
+        long = bateaux['longueur']
+        y = bateaux['y']
         for i in range(long):
-            grille[y][long].append(1)
+            grille[y][long]=1
             long = long-1
             if long<1:
                 for i in range(long):
-                    grille[y][long].append(1)
+                    grille[y][long]=1
                     long = long+1
-
-    if bateaux[sens]==1:
-        long = bateaux[longueur]
-        x = bateaux.x
+    if bateaux['sens']==1:
+        long = bateaux['longueur']
+        x = bateaux[x]
         for i in range(long):
-            grille[long][x].append(1)
+            grille[long][x]=1
             long = long-1
             if long<1:
                 for i in range(long):
-                    grille[long][x].append(1)
+                    grille[long][x] = 1
                     long = long+1
     return grille
 
