@@ -15,23 +15,34 @@ for ligne in range(16):
         grille_bot[ligne][cologne]=0
         grille_player[ligne][cologne]=0
 
-def bateauxPositionbot(bateaux):
-    bateaux.append("x":rd.randrange(1,17),"y":rd.randrange(1,17))
-    if bateaux.sens==0:
-        long = bateaux.longueur
+def bateauxPositionbot(bateaux,grille):
+    bateaux.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
+    if bateaux[sens]==0:
+        long = bateaux[longueur]
+        y = bateaux.y
+        for i in range(long):
+            grille[y][long].append(1)
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[y][long].append(1)
+                    long = long+1
+
+    if bateaux[sens]==1:
+        long = bateaux[longueur]
         x = bateaux.x
         for i in range(long):
-            grille_bot[long][x].append(1)
+            grille[long][x].append(1)
             long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[long][x].append(1)
+                    long = long+1
+    return grille
 
-    if bateaux.sens==1:
-        long = bateaux.longueur
-        x = bateaux.x
-        for i in range(long):
-            grille_bot[long][x].append(1)
-            long = long-1
 
-    
+
+print(bateauxPositionbot(bateaux4_1,grille_bot))
 
 
 
