@@ -16,10 +16,21 @@ for ligne in range(16):
         grille_player[ligne][cologne]=0
 
 def bateauxPositionbot(bateaux):
-    if sens==0:
+    bateaux.append("x":rd.randrange(1,17),"y":rd.randrange(1,17))
+    if bateaux.sens==0:
+        long = bateaux.longueur
+        x = bateaux.x
+        for i in range(long):
+            grille_bot[long][x].append(1)
+            long = long-1
 
-    if sens==1:
-        
+    if bateaux.sens==1:
+        long = bateaux.longueur
+        x = bateaux.x
+        for i in range(long):
+            grille_bot[long][x].append(1)
+            long = long-1
+
     
 
 
