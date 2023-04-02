@@ -7,10 +7,13 @@ bateaux3_1_2 = {"longueur":3,"largeur":1, "sens":rd.randrange(0,2)}
 bateaux2_1_1 = {"longueur":2,"largeur":1, "sens":rd.randrange(0,2)}
 bateaux2_1_2 = {"longueur":2,"largeur":1, "sens":rd.randrange(0,2)}
 
-grille=np.arange(16*16).reshape(16,16)
+grille_player=np.arange(16*16).reshape(16,16)
+grille_bot=np.arange(16*16).reshape(16,16)
+
 for ligne in range(16):
     for cologne in range (16):
-        grille[ligne][cologne]=0
+        grille_bot[ligne][cologne]=0
+        grille_player[ligne][cologne]=0
 
 def bateauxPosition(bateaux):
     # A finir
@@ -32,6 +35,4 @@ def bateauxPosition(bateaux):
 # Etape 11 : Changer les valeurs des position des bateaux en 1
 # Etape 12 : On va demander a chaque tour une coordonnés au joueur adverse
 # Etape 13 : On vérifie si la position est égal à 1 si oui alors la case sera Colorier en rouge  
-# Etape 14 : on créra un variable qui rajoutera 1 a chaque fois que une case sera trouver et si elle est égal a 14  
-
-
+# Etape 14 : on créra un variable qui rajoutera 1 a chaque fois que une case sera trouver et si elle est égal a 14
