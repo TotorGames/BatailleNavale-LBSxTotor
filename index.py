@@ -15,11 +15,17 @@ for ligne in range(16):
         grille_bot[ligne][cologne]=0
         grille_player[ligne][cologne]=0
 
-def bateauxPositionbot(bateaux,grille):
-    bateaux.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
-    if bateaux['sens']==0:
-        long = bateaux['longueur']
-        y = bateaux['y']
+def bateauxPositionbot(bateaux1,bateaux2,bateaux3,bateaux4,bateaux5,grille):
+    bateaux1.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
+    bateaux2.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
+    bateaux3.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
+    bateaux4.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
+    bateaux5.update({"x": rd.randrange(1,17),"y":rd.randrange(1,17)})
+
+    #Bateau 1
+    if bateaux1['sens']==0:
+        long = bateaux1['longueur']
+        y = bateaux1['y']
         for i in range(long):
             grille[y][long]=1
             long = long-1
@@ -27,9 +33,97 @@ def bateauxPositionbot(bateaux,grille):
                 for i in range(long):
                     grille[y][long]=1
                     long = long+1
-    if bateaux['sens']==1:
-        long = bateaux['longueur']
-        x = bateaux[x]
+    if bateaux1['sens']==1:
+        long = bateaux1['longueur']
+        x = bateaux1['x']
+        for i in range(long):
+            grille[long][x]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[long][x] = 1
+                    long = long+1
+    #_______________________________________#
+    #Bateaux 2
+    if bateaux2['sens']==0:
+        long = bateaux2['longueur']
+        y = bateaux2['y']
+        for i in range(long):
+            grille[y][long]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[y][long]=1
+                    long = long+1
+    if bateaux2['sens']==1:
+        long = bateaux2['longueur']
+        x = bateaux2['x']
+        for i in range(long):
+            grille[long][x]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[long][x] = 1
+                    long = long+1
+    #_______________________________________#
+    #Bateaux 3
+    if bateaux3['sens']==0:
+        long = bateaux3['longueur']
+        y = bateaux3['y']
+        for i in range(long):
+            grille[y][long]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[y][long]=1
+                    long = long+1
+    if bateaux3['sens']==1:
+        long = bateaux3['longueur']
+        x = bateaux3['x']
+        for i in range(long):
+            grille[long][x]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[long][x] = 1
+                    long = long+1
+    #_______________________________________#
+    #Bateaux 4
+    if bateaux4['sens']==0:
+        long = bateaux4['longueur']
+        y = bateaux4['y']
+        for i in range(long):
+            grille[y][long]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[y][long]=1
+                    long = long+1
+    if bateaux4['sens']==1:
+        long = bateaux4['longueur']
+        x = bateaux4['x']
+        for i in range(long):
+            grille[long][x]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[long][x] = 1
+                    long = long+1
+    #_______________________________________#
+    #Bateaux 5
+    if bateaux5['sens']==0:
+        long = bateaux5['longueur']
+        y = bateaux5['y']
+        for i in range(long):
+            grille[y][long]=1
+            long = long-1
+            if long<1:
+                for i in range(long):
+                    grille[y][long]=1
+                    long = long+1
+    if bateaux5['sens']==1:
+        long = bateaux5['longueur']
+        x = bateaux5['x']
         for i in range(long):
             grille[long][x]=1
             long = long-1
@@ -41,7 +135,7 @@ def bateauxPositionbot(bateaux,grille):
 
 
 
-print(bateauxPositionbot(bateaux4_1,grille_bot))
+print(bateauxPositionbot(bateaux4_1,bateaux3_1_1,bateaux3_1_2,bateaux2_1_1,bateaux2_1_2,grille_bot))
 
 
 
