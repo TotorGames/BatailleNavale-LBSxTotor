@@ -144,16 +144,34 @@ def botVERIF(grille):
     return grille[y][x]
 
 
-def touchePLAYER(grilleBOT):
-    while True:
-        x=int(input("Votre colone :"))
-        y = int(input("Votre Ligne :"))
 
-        if grilleBOT[y][x]==1:
-            print("Vous avez touché un bateaux ennemi")
-        if grilleBOT[y][x]==0:
-            print("Vous avez echoue votre tir")
+while True:
+    x=int(input("Votre colone :"))
+    y = int(input("Votre Ligne :"))
+    botCo = botVERIF(grillePLAYER)
+    if x <= 16 & x>=0:
+        if y <= 16 & x>=0:
+            if grilleBOT[y][x]==1:
+                print("Vous avez touché un bateaux ennemi")
+                grilleBOT[y][x]=2
+            if grilleBOT[y][x]==0:
+                print("Vous avez echoue votre tir")
+            if np.sum(grilleBOT==1)==0:
+                print("Vous avez Gagner la partie")
+                break
+    else:
+        print("Votre chiffre doit être comprit entre 16 et 0 !")
+        break
 
+    print("______ Tour du Bot _______")
+    if botCo==1:
+        print("Vous avez été touché par l'ennemi")
+        botCo=2
+    if botCo==0:
+        print("L'ennemi a raté !")
+    if np.sum(grillePLAYER==1)==0:
+        print("L'ennemi a gagner la partie")
+        break
 
 
 
