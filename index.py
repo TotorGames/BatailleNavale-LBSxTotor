@@ -15,7 +15,7 @@ for ligne in range(16):
         grille_bot[ligne][cologne]=0
         grille_player[ligne][cologne]=0
 
-def bateauxPositionbot(bateaux1,bateaux2,bateaux3,bateaux4,bateaux5,grille):
+def bateauxPosition(bateaux1,bateaux2,bateaux3,bateaux4,bateaux5,grille):
     bateaux1.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
     bateaux2.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
     bateaux3.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
@@ -134,7 +134,25 @@ def bateauxPositionbot(bateaux1,bateaux2,bateaux3,bateaux4,bateaux5,grille):
     return grille
 
 
-print(bateauxPositionbot(bateaux4_1,bateaux3_1_1,bateaux3_1_2,bateaux2_1_1,bateaux2_1_2,grille_bot))
+grilleBOT = bateauxPosition(bateaux4_1,bateaux3_1_1,bateaux3_1_2,bateaux2_1_1,bateaux2_1_2,grille_bot)
+grillePLAYER = bateauxPosition(bateaux4_1,bateaux3_1_1,bateaux3_1_2,bateaux2_1_1,bateaux2_1_2,grille_player)
+
+
+def botVERIF(grille):
+    x = rd.randrange(0,16)
+    y = rd.randrange(0,16)
+    return grille[y][x]
+
+
+def touchePLAYER(grilleBOT):
+    while True:
+        x=int(input("Votre colone :"))
+        y = int(input("Votre Ligne :"))
+
+        if grilleBOT[y][x]==1:
+            print("Vous avez touché un bateaux ennemi")
+        if grilleBOT[y][x]==0:
+            print("Vous avez echoue votre tir")
 
 
 
