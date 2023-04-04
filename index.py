@@ -16,11 +16,11 @@ for ligne in range(16):
         grille_player[ligne][cologne]=0
 
 def bateauxPosition(bateaux1,bateaux2,bateaux3,bateaux4,bateaux5,grille):
-    bateaux1.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
-    bateaux2.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
-    bateaux3.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
-    bateaux4.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
-    bateaux5.update({"x": rd.randrange(1,17),"y":rd.randrange(0,16)})
+    bateaux1.update({"x": rd.randrange(0,15),"y":rd.randrange(0,15)})
+    bateaux2.update({"x": rd.randrange(0,15),"y":rd.randrange(0,15)})
+    bateaux3.update({"x": rd.randrange(0,15),"y":rd.randrange(0,15)})
+    bateaux4.update({"x": rd.randrange(0,15),"y":rd.randrange(0,15)})
+    bateaux5.update({"x": rd.randrange(0,15),"y":rd.randrange(0,15)})
 
     #Bateau 1
     if bateaux1['sens']==0:
@@ -139,8 +139,8 @@ grillePLAYER = bateauxPosition(bateaux4_1,bateaux3_1_1,bateaux3_1_2,bateaux2_1_1
 
 
 def botVERIF(grille):
-    x = rd.randrange(0,16)
-    y = rd.randrange(0,16)
+    x = rd.randrange(0,15)
+    y = rd.randrange(0,15)
     return grille[y][x]
 
 
@@ -149,18 +149,19 @@ while True:
     x=int(input("Votre colone :"))
     y = int(input("Votre Ligne :"))
     botCo = botVERIF(grillePLAYER)
-    if x <= 16 & x>=0:
-        if y <= 16 & x>=0:
+    if x <= 15 and x>=0:
+        if y <= 15 and x>=0:
             if grilleBOT[y][x]==1:
                 print("Vous avez touché un bateaux ennemi")
                 grilleBOT[y][x]=2
             if grilleBOT[y][x]==0:
                 print("Vous avez echoue votre tir")
+                grilleBOT[y][x]=3
             if np.sum(grilleBOT==1)==0:
                 print("Vous avez Gagner la partie")
                 break
     else:
-        print("Votre chiffre doit être comprit entre 16 et 0 !")
+        print("Votre chiffre doit être comprit entre 15 et 0 !")
         break
 
     print("______ Tour du Bot _______")
@@ -169,6 +170,7 @@ while True:
         botCo=2
     if botCo==0:
         print("L'ennemi a raté !")
+        botCo=3
     if np.sum(grillePLAYER==1)==0:
         print("L'ennemi a gagner la partie")
         break
